@@ -1,13 +1,13 @@
 version: "3.9"
 
 services:
-  my_profile-infra:
+  aws-cdk:
+    container_name: aws-cdk
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: aws-cdk
+    working_dir: /app
     volumes:
       - ./:/app
     tty: true
     stdin_open: true
-    working_dir: /app

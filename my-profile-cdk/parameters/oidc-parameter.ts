@@ -24,7 +24,7 @@ export const cicdOidcRoleStackProperty: CicdOidcRoleStackProperty = {
   props: {
     gitHub: {
       owner: "miyazaki-dev01",
-      repo: "My_profile",
+      repo: "my-profile",
       branch: "main",
     },
   },
