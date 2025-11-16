@@ -17,7 +17,7 @@ export const dnsStackProperty: DnsStackProperty = {
   },
   props: {
     hostedZone: {
-      zoneName: "miyazaki-profile.com",
+      zoneName: "profileofmiyazaki.com",
     },
   },
 };

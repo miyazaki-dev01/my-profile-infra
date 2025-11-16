@@ -31,7 +31,7 @@ export interface MailApiStackProperty {
 }
 
 const allowedOrigins = [
-  "https://miyazaki-profile.com",
+  "https://profileofmiyazaki.com",
   "http://localhost:3000",
 ];
 

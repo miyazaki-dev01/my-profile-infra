@@ -26,7 +26,7 @@ export const websiteStackProperty: WebSiteStackProperty = {
   },
   props: {
     contentsDelivery: {
-      domainName: "miyazaki-profile.com",
+      domainName: "profileofmiyazaki.com",
       enableDirectoryIndex: "cf2",
     },
     bucket: {
