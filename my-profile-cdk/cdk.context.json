@@ -1,6 +1,6 @@
 {
-  "hosted-zone:account=387056640527:domainName=miyazaki-profile.com:region=ap-northeast-1": {
-    "Id": "/hostedzone/Z0214663WAJI2UEBFFO",
-    "Name": "miyazaki-profile.com."
+  "hosted-zone:account=387056640527:domainName=profileofmiyazaki.com:region=ap-northeast-1": {
+    "Id": "/hostedzone/Z0568962OELAF6C2ITD6",
+    "Name": "profileofmiyazaki.com."
   }
 }

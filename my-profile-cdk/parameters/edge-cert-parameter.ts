@@ -16,6 +16,6 @@ export const edgeCertStackProperty: EdgeCertStackProperty = {
     region: "us-east-1", // CloudFront用証明書は必ず us-east-1 で発行
   },
   props: {
-    certificateDomainName: "miyazaki-profile.com",
+    certificateDomainName: "profileofmiyazaki.com",
   },
 };
