@@ -36,10 +36,10 @@ export class MailerFunctionConstruct extends Construct {
     // 送信用のLambda関数を作成
     const fn = new lambdaNode.NodejsFunction(this, "SendMailFn", {
       entry: require.resolve("@/functions/lambda/send-mail.ts"), // Lambdaエントリ
-      runtime: lambda.Runtime.NODEJS_20_X,                       // Node.js 20
+      runtime: lambda.Runtime.NODEJS_22_X,                       // Node.js 20
       memorySize: 256,                                           // メモリ（256MB）
       timeout: Duration.seconds(10),                             // タイムアウト（10秒）
-      bundling: { target: "node20" },                            // esbuildターゲット
+      bundling: { target: "node22" },                            // esbuildターゲット
       logGroup: sendMailFnLogs,
       environment: {
         FROM_EMAIL: fromAddress,                                 // 差出人

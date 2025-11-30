@@ -142,7 +142,7 @@ ${p.message}
 };
 
 const buildSenderMail = (p: ContactPayload, replyToForSender: string) => {
-  const subject = "【Miyazaki's profile】お問い合わせありがとうございます";
+  const subject = "【profile of miyazaki】お問い合わせありがとうございます";
 
   const text = `
 ${p.name} 様
