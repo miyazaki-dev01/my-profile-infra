@@ -47,9 +47,9 @@ export class CdnConstruct extends Construct {
     // キャッシュポリシー（静的サイト向け）
     const defaultCache = new cf.CachePolicy(this, "DefaultCache", {
       cachePolicyName: "default-html-aware",                   // 一意な名前
-      defaultTtl: Duration.hours(1),                           // HTML等の既定TTL
-      minTtl: Duration.seconds(0),                             // 即時上書きも許容
-      maxTtl: Duration.days(7),                                // 最長でも7日
+      defaultTtl: Duration.days(365),                          // HTML等の既定TTL
+      minTtl: Duration.days(365),                              // 最小TTL
+      maxTtl: Duration.days(365),                              // 最大TTL
       enableAcceptEncodingBrotli: true,                        // Brotli対応
       enableAcceptEncodingGzip: true,                          // gzip対応
       cookieBehavior: cf.CacheCookieBehavior.none(),           // クッキーをキーに含めない
@@ -130,13 +130,13 @@ export class CdnConstruct extends Construct {
           httpStatus: 404,
           responseHttpStatus: 404,
           responsePagePath: "/404.html",
-          ttl: Duration.minutes(5),
+          ttl: Duration.days(365),
         },
         {
           httpStatus: 403,
           responseHttpStatus: 404,
           responsePagePath: "/404.html",
-          ttl: Duration.minutes(5),
+          ttl: Duration.days(365),
         },
       ],
       priceClass: cf.PriceClass.PRICE_CLASS_200,                           // コスト/性能バランス
