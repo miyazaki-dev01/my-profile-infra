@@ -2,6 +2,7 @@ import * as cdk from "aws-cdk-lib";
 import { Construct } from "constructs";
 import { DnsStackProperty } from "@/parameters/dns-parameter";
 import { HostedZoneConstruct } from "@/lib/constructs/dns-construct/hosted-zone-construct";
+import { SearchConsoleConstruct } from "@/lib/constructs/dns-construct/search-console-construct";
 
 export interface HostedZoneRef {
   hostedZoneId: string;
@@ -9,8 +10,7 @@ export interface HostedZoneRef {
 }
 
 export interface DnsStackProps
-  extends cdk.StackProps,
-    Omit<DnsStackProperty, "env"> {}
+  extends cdk.StackProps, Omit<DnsStackProperty, "env"> {}
 
 export class DnsStack extends cdk.Stack {
   public readonly hostedZoneRef: HostedZoneRef;
@@ -24,6 +24,15 @@ export class DnsStack extends cdk.Stack {
       "HostedZoneConstruct",
       props.props.hostedZone,
     );
+
+    // Search Console TXT（任意）
+    const sc = props.props.searchConsole;
+    if (sc?.recordValue) {
+      new SearchConsoleConstruct(this, "SearchConsoleConstruct", {
+        hostedZone: hz.hostedZone,
+        recordValue: sc.recordValue,
+      });
+    }
 
     // 参照情報を公開
     this.hostedZoneRef = {

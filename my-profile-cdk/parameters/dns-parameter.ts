@@ -5,9 +5,16 @@ export interface HostZoneProperty {
   hostedZoneId?: string;
 }
 
+export interface SearchConsoleProperty {
+  recordValue: string;
+}
+
 export interface DnsStackProperty {
   env: cdk.Environment;
-  props: { hostedZone: HostZoneProperty };
+  props: {
+    hostedZone: HostZoneProperty;
+    searchConsole?: SearchConsoleProperty;
+  };
 }
 
 export const dnsStackProperty: DnsStackProperty = {
@@ -18,6 +25,10 @@ export const dnsStackProperty: DnsStackProperty = {
   props: {
     hostedZone: {
       zoneName: "profileofmiyazaki.com",
+    },
+    searchConsole: {
+      recordValue:
+        "google-site-verification=UzGcBPXs3NrJ96vKQQa-ojnEW7yxMz2bJNvwbcbFoNE",
     },
   },
 };
